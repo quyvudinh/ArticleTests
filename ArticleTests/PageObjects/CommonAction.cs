@@ -12,7 +12,7 @@ namespace ClassLibrary1
         {
             this.driver = driver;
         }
-        public void ClickObj(By element)
+        public void ClickElement(By element)
         {
             driver.FindElement(element).Click();
         }

@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using AutoItX3Lib;
+using OpenQA.Selenium;
 namespace ClassLibrary1.PageObject
 {
     class Media:CommonAction
@@ -17,12 +18,15 @@ namespace ClassLibrary1.PageObject
         public By btnDeleteImage = By.XPath("//input[@value='" + CommonValue.IMAGE_NAME + "']/ancestor::li//a[@class = 'close delete-item']");
         #endregion
 
-        //#region Actions
-        //public void UploadFile(string filename)
-        //{
-        //    SendKeys.SendWait(@"C:\Users\SATTDN18.02.07\Pictures\Saved Pictures\"+filename+"");
-        //    SendKeys.SendWait(@"{Enter}");
-        //}
-        //#endregion
+        #region Actions
+        public void UploadFile(string path)
+        {
+            AutoItX3 autoIT = new AutoItX3();
+            autoIT.ControlClick("Open", "", "Edit1");
+            System.Threading.Thread.Sleep(1000);
+            autoIT.Send(path);
+            autoIT.ControlClick("Open", "", "Button1");
+        }
+        #endregion
     }
 }

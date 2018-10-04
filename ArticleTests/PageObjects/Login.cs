@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using ClassLibrary1.TestDataAccess;
+using OpenQA.Selenium;
 
 namespace ClassLibrary1.PageObject
 {
@@ -28,6 +29,16 @@ namespace ClassLibrary1.PageObject
             driver.FindElement(password).SendKeys(pw);
             driver.FindElement(loginbutton).Click();
         }
+        //public void login(string testName)
+        //{
+        //    var userData = ExcelDataAccess.GetTestData(testName);
+        //    driver.FindElement(username).SendKeys(userData.Username);
+        //    driver.FindElement(password).SendKeys(userData.Password);
+        //    driver.FindElement(loginbutton).Click();
+        //    //UserName.SendKeys(userData.Username);
+        //    //Password.SendKeys(userData.Password);
+        //    //Submit.Submit();
+        //}
         #endregion
 
     }
